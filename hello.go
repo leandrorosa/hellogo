@@ -3,9 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	var nome = "Leandro"
-	var idade = 32
-	var versao float32 = 1.1
-	fmt.Println("Olá, sr.", nome, "sua idade é", idade)
+	nome := "Leandro"
+	versao := 1.1
+	fmt.Println("Olá, sr.", nome)
 	fmt.Println("Este programa está na versão", versao)
+
+	fmt.Println("1 - Iniciar monitoramento")
+	fmt.Println("2 - Exibir logs")
+	fmt.Println("0 - Sair")
+
+	var comando int
+	fmt.Scan(&comando)
+
+	fmt.Println("O valor da variável comando é:", comando)
 }
