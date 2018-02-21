@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
-import "os"
+import (
+	"fmt"
+	"net/http"
+	"os"
+)
 
 func main() {
 
@@ -43,4 +46,16 @@ func leComando() int {
 	fmt.Println("O valor da variável comando é:", comandoLido)
 
 	return comandoLido
+}
+
+func iniciarMonitoramento() {
+	fmt.Println("Monitorando...")
+	site := "https://www.alura.com.br/"
+	resp, _ := http.Get(site)
+
+	if resp.StatusCode == 200 {
+		fmt.Println("Site:", site, "foi carregado com sucesso!")
+	} else {
+		fmt.Println("Site:", site, "está com problemas. Status Code:", resp.StatusCode)
+	}
 }
